@@ -1,0 +1,22 @@
+#version: "3.9"
+#services:
+#  mongodbservice:
+#    image: mongo:latest
+#    ports:
+#      - "27017:27017"
+#    container_name: mongo-track-container
+#    networks:
+#      - track-net
+#  user-auth-service:
+#    container_name: track-service
+#    build: ./
+#    networks:
+#      - track-net
+#    ports:
+#      - "65103:65103"
+#    depends_on:
+#      - mongodbservice
+#    restart: always
+#networks:
+#  track-net:
+#    driver: bridge

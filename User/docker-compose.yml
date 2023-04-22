@@ -1,0 +1,28 @@
+#version: "3.9"
+#services:
+#  mysql-user-service:
+#    image: mysql:latest
+#    ports:
+#      - "3307:3306"
+#    container_name: auth-app-container
+#    networks:
+#      - user-net
+#    environment:
+#      MYSQL_ROOT_PASSWORD: root
+#      MYSQL_USERNAME: nitin
+#      MYSQL_PASSWORD: nick
+#      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+#
+#  user-auth-service:
+#    container_name: user-auth-service
+#    build: ./
+#    networks:
+#      - user-net
+#    ports:
+#      - "8083:8083"
+#    depends_on:
+#      - mysql-user-service
+#    restart: always
+#networks:
+#  user-net:
+#    driver: bridge
